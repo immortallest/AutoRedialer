@@ -1,0 +1,42 @@
+plugins {
+    id 'com.android.application' version '8.1.1'
+    id 'org.jetbrains.kotlin.android' version '1.8.10'
+}
+
+android {
+    namespace 'com.example.autoredialer'
+    compileSdk 33
+
+    defaultConfig {
+        applicationId "com.example.autoredialer"
+        minSdk 26
+        targetSdk 33
+        versionCode 2
+        versionName "2.0"
+    }
+
+    buildFeatures {
+        // ViewBinding: جایگزین findViewById که خطای null-pointer می‌دهد
+        viewBinding true
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
+dependencies {
+    implementation 'androidx.core:core-ktx:1.10.1'
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+
+    // Material Design - برای CardView، Button و سایر کامپوننت‌های مدرن
+    implementation 'com.google.android.material:material:1.9.0'
+
+    // CardView - برای کارت‌های UI
+    implementation 'androidx.cardview:cardview:1.0.0'
+}
